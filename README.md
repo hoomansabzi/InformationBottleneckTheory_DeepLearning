@@ -107,15 +107,18 @@ ibdl/                  the library
   cache.py             disk cache + parallel execution
   plotting.py          information planes and diagnostics
 
+final/                 the two presentation notebooks (self-contained) + their figures
 notebooks/             01-07, one per paper section (executed, with outputs)
 tools/                 notebook generators + tools/precompute.py
 tests/                 46 validation checks
 report/                report.tex -> report.pdf
-slides/                slides.tex -> slides.pdf (beamer)
+slides/                slides.tex -> slides.pdf, slides_final.tex -> slides_final.pdf
 figures/               every figure, as PDF (for LaTeX) and PNG
-results/               cached experiment results (~900 MB, regenerable)
 reference/             authors' var_u.mat + original estimator code (for cross-checking)
-papers/                the two PDFs
+
+results/               generated on first run, not committed (~1.3 GB)
+final/cache/           generated on first run, not committed (~630 MB)
+data/                  MNIST, downloaded on first use, not committed
 ```
 
 ## Notebooks
@@ -174,9 +177,6 @@ So a fresh clone will not have a cache, and the notebooks will train the network
 time you run them: about 6 minutes for `final/1`, 18 for `final/2`. Every notebook here is
 committed **with its outputs**, so you can read all of it — figures, tables and numbers —
 without running anything at all.
-
-The two papers being reproduced are not redistributed here either; see the references at
-the end of `final/1_information_bottleneck.ipynb` for the citations.
 
 ## Validation
 
