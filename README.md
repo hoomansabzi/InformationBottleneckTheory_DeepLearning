@@ -159,6 +159,25 @@ Rebuild the documents:
 cd report && latexmk -pdf report.tex
 ```
 
+### What is not in this repository
+
+Three directories are deliberately absent, because they are large and every one of them
+regenerates itself:
+
+| absent | size | how to get it back |
+|---|---|---|
+| `results/` | ~1.3 GB | `.venv/bin/python tools/precompute.py`, or just run the notebooks |
+| `final/cache/` | ~630 MB | run the two notebooks in `final/` once |
+| `data/` | 12 MB | downloaded automatically on first use by `ibdl.data.load_mnist` |
+
+So a fresh clone will not have a cache, and the notebooks will train the networks the first
+time you run them: about 6 minutes for `final/1`, 18 for `final/2`. Every notebook here is
+committed **with its outputs**, so you can read all of it — figures, tables and numbers —
+without running anything at all.
+
+The two papers being reproduced are not redistributed here either; see the references at
+the end of `final/1_information_bottleneck.ipynb` for the citations.
+
 ## Validation
 
 All 46 checks pass. The estimators agree with the **original authors' implementations**
